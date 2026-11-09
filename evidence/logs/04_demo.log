@@ -1,0 +1,43 @@
+{
+ "ingest": {
+  "new_records": 1413,
+  "new_versions": 0,
+  "unchanged": 0
+ },
+ "ingest_again_idempotent": {
+  "new_records": 0,
+  "new_versions": 0,
+  "unchanged": 1413
+ },
+ "isolation_demo": "DENIED as expected: pinnacle-reviewer is not authorised for T-MERIDIAN",
+ "audit_denials": 1
+}
+{
+ "label": "SIMULATED correction (not a real Kestrel change)",
+ "record": "02_Product_Master/R57",
+ "new_source_version": 2,
+ "original_assessment": "ASM-ac3e4e7b0db4567a09c245ad",
+ "original_payload_sha256_before": "0dd774f32b2e63c8713b07b87041bf63549f11777f05dbcad5d87a99f9dc8787",
+ "original_payload_sha256_after": "0dd774f32b2e63c8713b07b87041bf63549f11777f05dbcad5d87a99f9dc8787",
+ "original_unchanged": true,
+ "new_assessment": "ASM-53eca870d733b4558d1819f0",
+ "supersedes": "ASM-9be5fe90a6a927d0887e37b5",
+ "change": {
+  "added_findings": [],
+  "removed_findings": [
+   "STABILITY_REFERENCED_STUDY_INADMISSIBLE",
+   "STABILITY_UNREFERENCED_CANDIDATE"
+  ],
+  "status": [
+   "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+   "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+  ],
+  "knowledge_cutoff": [
+   "2026-09-14T23:59:00Z",
+   "2026-09-21T00:00:00Z"
+  ],
+  "reopen_review_recommended": false
+ },
+ "replay_at_alert_after_correction_same_id": true
+}
+assessments stored: 841; outputs in artifacts/e2e

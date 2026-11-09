@@ -1,0 +1,16 @@
+$ curl http://127.0.0.1:8799/health/ready
+{"ready":true,"workbook_loaded":true,"append_only_triggers":true,"missing_triggers":[],"assessments_checked":0,"assessments_failing_hash":[]}
+$ curl http://127.0.0.1:8799/api/v1/tenants/T-KAVERI/events?limit=500 -H X-Actor: e2e-qa -H X-Tenant-Scope: T-KAVERI -H Content-Type: application/json
+{"_summary": "38299 bytes; top-level keys: tenant, total, limit, offset, items", "tenant": "T-KAVERI", "total": 44}
+$ curl -X POST http://127.0.0.1:8799/api/v1/tenants/T-KAVERI/events/EXC-107133/assessments -H X-Actor: e2e-qa -H X-Tenant-Scope: T-KAVERI -H Content-Type: application/json -d {"knowledge_cutoff":"alert"}
+{"_summary": "20071 bytes; top-level keys: stored, assessment_id, status, assessment", "stored": "new", "assessment_id": "ASM-ac3e4e7b0db4567a09c245ad", "status": "ABSTAIN_BLOCKING_EVIDENCE_GAPS"}
+$ curl -X POST http://127.0.0.1:8799/api/v1/tenants/T-KAVERI/events/EXC-107133/assessments -H X-Actor: e2e-qa -H X-Tenant-Scope: T-KAVERI -H Content-Type: application/json -d {"knowledge_cutoff":"extract"}
+{"_summary": "20377 bytes; top-level keys: stored, assessment_id, status, assessment", "stored": "new", "assessment_id": "ASM-9be5fe90a6a927d0887e37b5", "status": "ABSTAIN_BLOCKING_EVIDENCE_GAPS"}
+$ curl -X POST http://127.0.0.1:8799/api/v1/assessments/ASM-ac3e4e7b0db4567a09c245ad/package -H X-Actor: e2e-qa -H X-Tenant-Scope: T-KAVERI -H Content-Type: application/json
+{"_summary": "780 bytes; top-level keys: manifest, verification"}
+$ curl -X POST http://127.0.0.1:8799/api/v1/assessments/ASM-ac3e4e7b0db4567a09c245ad/package/tamper-demo -H X-Actor: e2e-qa -H X-Tenant-Scope: T-KAVERI -H Content-Type: application/json
+{"original":{"package":"artifacts/e2e/api/packages/ASM-ac3e4e7b0db4567a09c245ad","ok":true,"problems":[],"package_digest":"95601214e2f0d9afd61bb3f7fca4b3082ea9b44bb14d92b5a8b6fdbc14b224b9"},"tampered_copy":{"package":"artifacts/e2e/api/tamper_demo/ASM-ac3e4e7b0db4567a09c245ad","ok":false,"problems":["hash mismatch assessment.json"],"package_digest":"95601214e2f0d9afd61bb3f7fca4b3082ea9b44bb14d92b5a8b6fdbc14b224b9"},"edit":"status rewritten to READY_FOR_QA_REVIEW in the copy only"}
+$ curl http://127.0.0.1:8799/api/v1/tenants/T-KAVERI/obligations?as_of=2026-07-29T00:00:00Z -H X-Actor: e2e-qa -H X-Tenant-Scope: T-KAVERI -H Content-Type: application/json
+{"_summary": "17801 bytes; top-level keys: as_of_utc, margin_hours, only_at_risk, count, items", "count": 40}
+$ curl -X POST http://127.0.0.1:8799/api/v1/tenants/T-KAVERI/obligations/EXC-107133/transitions -H X-Actor: e2e-ra -H X-Tenant-Scope: T-KAVERI -H X-Roles: REGULATORY_AFFAIRS -H Content-Type: application/json -H Idempotency-Key: e2e-1 -d {"to_state":"NOTIFIABLE_CONFIRMED","expected_version":1,"note":"e2e"}
+{"applied":true,"obligation":{"obligation_id":"OBL-T-KAVERI-EXC-107133","tenant_code":"T-KAVERI","event_id":"EXC-107133","clock_start_utc":"2026-07-28T06:31:00Z","due_at_utc":"2026-08-12T06:31:00Z","regime_kind":"ELAPSED_HOURS","state":"NOTIFIABLE_CONFIRMED","version":2,"satisfied":false,"hours_remaining":-2117.48,"breached":true,"escalate_now":false,"history":[{"state":"OPEN_UNDETERMINED","at":"2026-07-28T06:31:00Z","by":"system","note":"registered at alert receipt"},{"state":"NOTIFIABLE_CONFIRMED","at":"2026-11-08T12:00:00Z","by":"e2e-ra","note":"e2e"}]}}

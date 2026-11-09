@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+scratch/
+# Confidential inputs and real-data outputs stay local (they go in the submission archive, not the repo).
+data/*.xlsx
+data/*.xls
+artifacts/
+submission/
+.venv-e2e/
+data/*.pdf
+.mypy_cache/
+.ruff_cache/

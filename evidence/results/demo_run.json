@@ -1,0 +1,281 @@
+{
+  "ingest": {
+    "new_records": 1413,
+    "new_versions": 0,
+    "unchanged": 0
+  },
+  "ingest_again_idempotent": {
+    "new_records": 0,
+    "new_versions": 0,
+    "unchanged": 1413
+  },
+  "selected_cases": {
+    "brief_case_EXC-107133": {
+      "event_id": "EXC-107133",
+      "tenant": "T-KAVERI",
+      "at_alert": "ASM-ac3e4e7b0db4567a09c245ad",
+      "at_extract": "ASM-9be5fe90a6a927d0887e37b5",
+      "status_at_alert": "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+      "blocking_at_alert": [
+        "SOP_REVISION_OVERLAP",
+        "STABILITY_MASTER_VS_STUDY_CONFLICT",
+        "STABILITY_REFERENCED_STUDY_INADMISSIBLE",
+        "TEMPERATURE_SERIES_NOT_AVAILABLE"
+      ],
+      "supersession": {
+        "added_findings": [],
+        "removed_findings": [],
+        "status": [
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+        ],
+        "knowledge_cutoff": [
+          "2026-07-28T06:31:00Z",
+          "2026-09-14T23:59:00Z"
+        ],
+        "reopen_review_recommended": false
+      }
+    },
+    "sop_overlap": {
+      "event_id": "EXC-112821",
+      "tenant": "T-KAVERI",
+      "at_alert": "ASM-12495bbeb6689639960d282b",
+      "at_extract": "ASM-05c61d4eaab79c30554024b0",
+      "status_at_alert": "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+      "blocking_at_alert": [
+        "SOP_REVISION_OVERLAP",
+        "STABILITY_REF_MISSING",
+        "TEMPERATURE_SERIES_NOT_AVAILABLE"
+      ],
+      "supersession": {
+        "added_findings": [],
+        "removed_findings": [],
+        "status": [
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+        ],
+        "knowledge_cutoff": [
+          "2026-07-21T05:04:00Z",
+          "2026-09-14T23:59:00Z"
+        ],
+        "reopen_review_recommended": false
+      }
+    },
+    "unreferenced_stability_candidate": {
+      "event_id": "EXC-111519",
+      "tenant": "T-VIRENT",
+      "at_alert": "ASM-61282d13a3eaf6f6b6026697",
+      "at_extract": "ASM-65d46d13506ca16862563fc3",
+      "status_at_alert": "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+      "blocking_at_alert": [
+        "NO_SOP_INDEXED",
+        "STABILITY_MASTER_VS_STUDY_CONFLICT",
+        "STABILITY_REF_NOT_IN_TENANT_INDEX",
+        "TEMPERATURE_SERIES_NOT_AVAILABLE"
+      ],
+      "supersession": {
+        "added_findings": [
+          "DESTINATION_FACILITY_PROVISIONAL"
+        ],
+        "removed_findings": [
+          "DESTINATION_FACILITY_UNRESOLVED"
+        ],
+        "status": [
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+        ],
+        "knowledge_cutoff": [
+          "2026-04-22T19:12:00Z",
+          "2026-09-14T23:59:00Z"
+        ],
+        "reopen_review_recommended": false
+      }
+    },
+    "wrong_presentation_referenced": {
+      "event_id": "EXC-110336",
+      "tenant": "T-VIRENT",
+      "at_alert": "ASM-6cd9051a981afcb1ea013a22",
+      "at_extract": "ASM-b01f46fa26b74ccda2597643",
+      "status_at_alert": "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+      "blocking_at_alert": [
+        "NO_SOP_INDEXED",
+        "ORIGIN_FACILITY_UNRESOLVED",
+        "STABILITY_NO_ADMISSIBLE_STUDY",
+        "STABILITY_REFERENCED_STUDY_INADMISSIBLE",
+        "TEMPERATURE_SERIES_NOT_AVAILABLE"
+      ],
+      "supersession": {
+        "added_findings": [
+          "FIRMWARE_BULLETIN_APPLIES",
+          "ORIGIN_FACILITY_PROVISIONAL"
+        ],
+        "removed_findings": [
+          "ORIGIN_FACILITY_UNRESOLVED"
+        ],
+        "status": [
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+        ],
+        "knowledge_cutoff": [
+          "2026-04-07T13:55:00Z",
+          "2026-09-14T23:59:00Z"
+        ],
+        "reopen_review_recommended": true
+      }
+    },
+    "firmware_learned_after_alert": {
+      "event_id": "EXC-110336",
+      "tenant": "T-VIRENT",
+      "at_alert": "ASM-6cd9051a981afcb1ea013a22",
+      "at_extract": "ASM-b01f46fa26b74ccda2597643",
+      "status_at_alert": "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+      "blocking_at_alert": [
+        "NO_SOP_INDEXED",
+        "ORIGIN_FACILITY_UNRESOLVED",
+        "STABILITY_NO_ADMISSIBLE_STUDY",
+        "STABILITY_REFERENCED_STUDY_INADMISSIBLE",
+        "TEMPERATURE_SERIES_NOT_AVAILABLE"
+      ],
+      "supersession": {
+        "added_findings": [
+          "FIRMWARE_BULLETIN_APPLIES",
+          "ORIGIN_FACILITY_PROVISIONAL"
+        ],
+        "removed_findings": [
+          "ORIGIN_FACILITY_UNRESOLVED"
+        ],
+        "status": [
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+        ],
+        "knowledge_cutoff": [
+          "2026-04-07T13:55:00Z",
+          "2026-09-14T23:59:00Z"
+        ],
+        "reopen_review_recommended": true
+      }
+    },
+    "product_ref_missing": {
+      "event_id": "EXC-112198",
+      "tenant": "T-AURA",
+      "at_alert": "ASM-c82d8659cef361da07821259",
+      "at_extract": "ASM-fc45e8d585c00b6bd344c0d0",
+      "status_at_alert": "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+      "blocking_at_alert": [
+        "PRODUCT_REF_MISSING",
+        "SOP_ACCEPTANCE_LIMIT_CONTENT_UNAVAILABLE",
+        "STABILITY_NOT_SELECTABLE",
+        "TEMPERATURE_SERIES_NOT_AVAILABLE"
+      ],
+      "supersession": {
+        "added_findings": [],
+        "removed_findings": [],
+        "status": [
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+        ],
+        "knowledge_cutoff": [
+          "2026-06-03T06:55:00Z",
+          "2026-09-14T23:59:00Z"
+        ],
+        "reopen_review_recommended": false
+      }
+    },
+    "product_ambiguous": null,
+    "next_business_day_policy_incomplete": {
+      "event_id": "EXC-112352",
+      "tenant": "T-PINNACLE",
+      "at_alert": "ASM-39dd6a202d33458bc69d20f9",
+      "at_extract": "ASM-e35a97c62db38c49f5fc9520",
+      "status_at_alert": "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+      "blocking_at_alert": [
+        "GATEWAY_GAP_SPANS_EXCURSION",
+        "SOP_ACCEPTANCE_LIMIT_CONTENT_UNAVAILABLE",
+        "STABILITY_NO_ADMISSIBLE_STUDY",
+        "STABILITY_REFERENCED_STUDY_INADMISSIBLE",
+        "TEMPERATURE_SERIES_NOT_AVAILABLE"
+      ],
+      "supersession": {
+        "added_findings": [],
+        "removed_findings": [],
+        "status": [
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+          "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+        ],
+        "knowledge_cutoff": [
+          "2026-02-19T03:09:00Z",
+          "2026-09-14T23:59:00Z"
+        ],
+        "reopen_review_recommended": false
+      }
+    }
+  },
+  "correction_demo": {
+    "label": "SIMULATED correction (not a real Kestrel change)",
+    "record": "02_Product_Master/R57",
+    "new_source_version": 2,
+    "original_assessment": "ASM-ac3e4e7b0db4567a09c245ad",
+    "original_payload_sha256_before": "0dd774f32b2e63c8713b07b87041bf63549f11777f05dbcad5d87a99f9dc8787",
+    "original_payload_sha256_after": "0dd774f32b2e63c8713b07b87041bf63549f11777f05dbcad5d87a99f9dc8787",
+    "original_unchanged": true,
+    "new_assessment": "ASM-53eca870d733b4558d1819f0",
+    "supersedes": "ASM-9be5fe90a6a927d0887e37b5",
+    "change": {
+      "added_findings": [],
+      "removed_findings": [
+        "STABILITY_REFERENCED_STUDY_INADMISSIBLE",
+        "STABILITY_UNREFERENCED_CANDIDATE"
+      ],
+      "status": [
+        "ABSTAIN_BLOCKING_EVIDENCE_GAPS",
+        "ABSTAIN_BLOCKING_EVIDENCE_GAPS"
+      ],
+      "knowledge_cutoff": [
+        "2026-09-14T23:59:00Z",
+        "2026-09-21T00:00:00Z"
+      ],
+      "reopen_review_recommended": false
+    },
+    "replay_at_alert_after_correction_same_id": true
+  },
+  "isolation_demo": "DENIED as expected: pinnacle-reviewer is not authorised for T-MERIDIAN",
+  "audit_denials": 1,
+  "packages_verified": [
+    {
+      "package": "artifacts/e2e/packages/ASM-12495bbeb6689639960d282b",
+      "ok": true,
+      "problems": [],
+      "package_digest": "46e91d325dafa535dcd304c3ed538106fe8489124195d1514aa70dc9bc161a02"
+    },
+    {
+      "package": "artifacts/e2e/packages/ASM-39dd6a202d33458bc69d20f9",
+      "ok": true,
+      "problems": [],
+      "package_digest": "775fd4f5fde803e61bea016fa2769b6b7079f2b4ddc965f40398afd15d19bc42"
+    },
+    {
+      "package": "artifacts/e2e/packages/ASM-61282d13a3eaf6f6b6026697",
+      "ok": true,
+      "problems": [],
+      "package_digest": "9bc6b686dc89bf4c7b5091836c90ae6e97ea64f04ef4c40eeecc38e63267a72f"
+    },
+    {
+      "package": "artifacts/e2e/packages/ASM-6cd9051a981afcb1ea013a22",
+      "ok": true,
+      "problems": [],
+      "package_digest": "9d05b11b91055190a56d353c064e609e792c6066f0b8293edce8355b3cec3d08"
+    },
+    {
+      "package": "artifacts/e2e/packages/ASM-ac3e4e7b0db4567a09c245ad",
+      "ok": true,
+      "problems": [],
+      "package_digest": "9dfa847425fee3f2a846664029059768fd6d1eebd6aec947183e8181f8c969d3"
+    },
+    {
+      "package": "artifacts/e2e/packages/ASM-c82d8659cef361da07821259",
+      "ok": true,
+      "problems": [],
+      "package_digest": "4229bfeb7bc3299b55befa95e9ecee20f6aec09598ea0e5c807a31587dce611f"
+    }
+  ]
+}

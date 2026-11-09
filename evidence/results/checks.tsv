@@ -1,0 +1,48 @@
+id	check	expected	observed	result
+E1	Fresh install (pip install -e .[dev])	0	0	PASS
+E2	Test suite exit code	0	0	PASS
+E3	Tests passed (none failed or skipped)	131 passed	131 passed	PASS
+E3a	Lint and format (ruff)	0	0	PASS
+E3b	Static types (mypy)	0	0	PASS
+E4	Workbook inspection report written	0	0	PASS
+E5	Full demo exit code	0	0	PASS
+E6	Workbook rows ingested	1413	1413	PASS
+E7	Re-ingest is idempotent (new records)	0	0	PASS
+E8	Cross-tenant read denied in demo	True	True	PASS
+E9	Correction leaves original assessment byte-identical	True	True	PASS
+E10	At-alert replay after correction reproduces original ID	True	True	PASS
+E11	Assessments stored	841	841	PASS
+E12	All demo evidence packages verify	True	True	PASS
+E13	EXC-107133 abstains (no disposition)	ABSTAIN_BLOCKING_EVIDENCE_GAPS False	ABSTAIN_BLOCKING_EVIDENCE_GAPS False	PASS
+E14	EXC-107133 product resolved within T-KAVERI	02_Product_Master!R57	02_Product_Master!R57	PASS
+E15	EXC-107133 SOP overlap detected	SOP-KAV-9392 CONFLICT_OVERLAPPING_REVISIONS ['Rev 02', 'Rev 03']	SOP-KAV-9392 CONFLICT_OVERLAPPING_REVISIONS ['Rev 02', 'Rev 03']	PASS
+E16	EXC-107133 wrong-presentation study rejected	STB-3584 False	STB-3584 False	PASS
+E17	EXC-107133 pen study offered as candidate	True	True	PASS
+E18	EXC-107133 notification deadline from alert receipt	2026-08-12T06:31:00Z	2026-08-12T06:31:00Z	PASS
+E19	Assessment ID reproducible across runs	ASM-ac3e4e7b0db4567a09c245ad	ASM-ac3e4e7b0db4567a09c245ad	PASS
+E20	Later knowledge cutoff gives a different assessment	True	True	PASS
+E21	CLI cross-tenant read refused (exit code)	3	3	PASS
+E22	Exported package verifies	0	0	PASS
+E23	Other tenant cannot export the package (exit code)	3	3	PASS
+E24	Tampered package rejected (exit code)	2	2	PASS
+E25	CLI re-ingest adds nothing	"new_records": 0	"new_records": 0	PASS
+E26	API liveness	200	200	PASS
+E27	API readiness (workbook autoloaded, integrity self-check)	True	True	PASS
+E28	API lists T-KAVERI events without outcome fields	True	True	PASS
+E29	API missing identity headers	401	401	PASS
+E30	API invalid event id	422	422	PASS
+E31	API assess EXC-107133 abstains	ABSTAIN_BLOCKING_EVIDENCE_GAPS False	ABSTAIN_BLOCKING_EVIDENCE_GAPS False	PASS
+E32	API assessment ID equals CLI assessment ID	ASM-ac3e4e7b0db4567a09c245ad	ASM-ac3e4e7b0db4567a09c245ad	PASS
+E33	API re-assess is idempotent	200	200	PASS
+E34	API later cutoff supersedes the first	ASM-ac3e4e7b0db4567a09c245ad	ASM-ac3e4e7b0db4567a09c245ad	PASS
+E35	API cross-tenant event read	403	403	PASS
+E36	API cross-tenant assessment read	403	403	PASS
+E37	API package export verifies	True	True	PASS
+E38	API package zip download	200	200	PASS
+E39	API tampered package copy fails verification	True False	True False	PASS
+E40	API obligation for EXC-107133 due from alert receipt	2026-08-12T06:31:00Z	2026-08-12T06:31:00Z	PASS
+E41	API obligation transition needs REGULATORY_AFFAIRS	403	403	PASS
+E42	API obligation transition applied	NOTIFIABLE_CONFIRMED 2	NOTIFIABLE_CONFIRMED 2	PASS
+E43	API stale expected_version rejected	409	409	PASS
+E44	API metrics report ready and no hash failures	True	True	PASS
+E45	Web UI and OpenAPI docs served	200 200 200	200 200 200	PASS

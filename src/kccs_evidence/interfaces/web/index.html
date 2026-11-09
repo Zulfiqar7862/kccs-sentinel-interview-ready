@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KCCS Sentinel · Evidence Kernel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">KCCS Sentinel <span>Evidence Kernel</span></div>
+  <div class="identity">
+    <label>Actor <input id="actor" value="demo-reviewer" size="14"></label>
+    <label>Tenant <select id="tenant"></select></label>
+    <label title="Roles sent in X-Roles">Roles
+      <select id="roles">
+        <option value="QA_REVIEWER,QA_DATA_STEWARD,REGULATORY_AFFAIRS">QA + Data steward + RA</option>
+        <option value="QA_REVIEWER">QA reviewer only</option>
+      </select>
+    </label>
+    <span id="ready" class="pill">checking…</span>
+  </div>
+</header>
+<nav class="tabs">
+  <button data-tab="cases" class="active">1 · Cases</button>
+  <button data-tab="obligations">2 · Notification clock</button>
+  <button data-tab="audit">3 · Audit trail</button>
+  <button data-tab="system">4 · System</button>
+  <a href="/docs" target="_blank">OpenAPI docs ↗</a>
+</nav>
+
+<main>
+  <section id="tab-cases" class="tab active">
+    <div class="split">
+      <div class="panel list">
+        <div class="row">
+          <input id="q" placeholder="Search events (id, product, lane…)" value="">
+          <button id="search">Search</button>
+        </div>
+        <p class="muted" id="event-count"></p>
+        <table id="events"><thead><tr><th>Event</th><th>Alert (UTC)</th><th>Product as received</th><th>Max °C</th><th>Min</th><th>Latest status</th></tr></thead><tbody></tbody></table>
+        <div class="row"><button id="prev">‹ Prev</button><button id="next">Next ›</button></div>
+      </div>
+      <div class="panel detail" id="detail">
+        <p class="muted">Pick an event on the left. The brief's case is <a href="#" id="pick-brief">EXC-107133 (T-KAVERI)</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-obligations" class="tab">
+    <div class="panel">
+      <h2>Regulatory notification queue (earliest deadline first)</h2>
+      <p class="muted">The clock starts when the alert reaches Sentinel and is never paused by evidence waits.
+        Obligations with no computable deadline (policy incomplete) are listed first and must be escalated.</p>
+      <div class="row">
+        <label>As of (UTC) <input id="asof" value="2026-07-29T12:00:00Z" size="22"></label>
+        <label>At-risk window (h) <input id="margin" type="number" value="72" min="0" max="720"></label>
+        <label title="Hide old alerts: only those received in the last N hours before 'as of'">Received in last (h) <input id="recv" type="number" value="168" min="0"></label>
+        <label><input id="only-risk" type="checkbox"> only at risk</label>
+        <label><input id="all-scope" type="checkbox"> all tenants in my scope</label>
+        <button id="load-obl">Load queue</button>
+      </div>
+      <table id="obl"><thead><tr><th>Event</th><th>Tenant</th><th>Clock start</th><th>Due</th><th>Hours left</th><th>State</th><th>v</th><th>Move to</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <section id="tab-audit" class="tab">
+    <div class="panel">
+      <h2>Append-only audit trail <button id="load-audit">Refresh</button></h2>
+      <table id="audit"><thead><tr><th>#</th><th>At</th><th>Actor</th><th>Action</th><th>Target</th><th>Outcome</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <section id="tab-system" class="tab">
+    <div class="panel">
+      <h2>Readiness and versions <button id="load-sys">Refresh</button></h2>
+      <pre id="sys"></pre>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
